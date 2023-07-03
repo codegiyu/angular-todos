@@ -30,10 +30,9 @@ export class TaskFormComponent {
   addTask() {
     const prevState: any = this.state.getAllTasks()
     const allTasks = prevState.source._value
-    console.log(allTasks)
+    
     allTasks.todo.push(this.addTaskForm.value)
-    console.log(allTasks)
-    this._router.navigateByUrl("")
 
+    this._router.navigateByUrl("")
   }
 }
