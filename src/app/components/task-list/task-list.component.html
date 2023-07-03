@@ -1,0 +1,17 @@
+<div 
+    cdkDropList
+    [cdkDropListData]="tasksArray"
+    class="task-list"
+    (cdkDropListDropped)="drop($event)"
+>
+    <app-task-single 
+        *ngFor="let item of tasksArray" 
+        [title]="item.title"
+        [description]="item.description"
+        [background]="taskBackground"
+        cdkDrag
+    ></app-task-single>
+    <span *ngIf="!tasksArray.length" class="no-tasks-message">
+        No tasks here
+    </span>
+</div>

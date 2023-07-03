@@ -1,0 +1,25 @@
+.task-section-heading {
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & h2 {
+        font-size: 16px;
+        color: white;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    & .task-section-count {
+        width: 35px;
+        aspect-ratio: 1;
+        background: black;
+        color: white;
+        border-radius: 4px;
+        display: grid;
+        place-items: center;
+    }
+}

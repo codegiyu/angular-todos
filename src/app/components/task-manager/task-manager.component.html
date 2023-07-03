@@ -1,0 +1,51 @@
+<div class="task-manager-wrap">
+    <section class="task-manager-top">
+        <div class="task-manager-top-wrap">
+            <div class="task-manager-heading">
+                <h1 class="">Todos</h1>
+                <p class="">Create and manage your tasks for the day</p>
+            </div>
+            <button type="button" (click)="goToAddTask()" class="">
+                <span class="">Add Task</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="task-manager-main">
+        <div class="task-manager-main-wrap" cdkDropListGroup>
+            <section class="task-section">
+                <app-section-heading 
+                    [title]="'New Tasks'"
+                    [count]="tasks.source._value.todo?.length || 0"
+                    [background]="'#0000FF'"
+                ></app-section-heading>
+                <app-task-list
+                    [tasksArray]="tasks.source._value.todo"
+                    [taskGroup]="'todo'"
+                ></app-task-list>
+            </section>
+            <section class="task-section">
+                <app-section-heading 
+                    [title]="'In Progress'"
+                    [count]="tasks.source._value.doing?.length || 0"
+                    [background]="'#00FF00'"
+                ></app-section-heading>
+                <app-task-list
+                    [tasksArray]="tasks.source._value.doing"
+                    [taskGroup]="'doing'"
+                ></app-task-list>
+            </section>
+            <section class="task-section">
+                <app-section-heading 
+                    [title]="'Done'"
+                    [count]="tasks.source._value.done?.length || 0"
+                    [background]="'#FF0000'"
+                ></app-section-heading>
+                <app-task-list
+                    [tasksArray]="tasks.source._value.done"
+                    [taskGroup]="'done'"
+                ></app-task-list>
+            </section>
+        </div>
+    </section>
+</div>
