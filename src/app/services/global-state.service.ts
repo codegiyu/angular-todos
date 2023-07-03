@@ -13,27 +13,12 @@ export interface AllTasks {
   done: SingleTask[];
 }
 
-const dummyData = {
-  todo: [
-    { title: "1", description: "First one here" },
-    { title: "Second", description: "Second one here" },
-  ],
-  doing: [
-    { title: "Doing", description: "Have fun" },
-    { title: "Sense", description: "Still on the way" },
-  ],
-  done: [
-    { title: "done", description: "Amazing job" },
-    { title: "Nice", description: "As expected!" },
-  ],
-}
-
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalStateService {
   private menuIsOpen = new BehaviorSubject<boolean>(false);
-  private allTasks = new BehaviorSubject<AllTasks>(dummyData)
+  private allTasks = new BehaviorSubject<AllTasks>({ todo: [], doing: [], done: [] })
   
   constructor() { }
 

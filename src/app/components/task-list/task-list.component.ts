@@ -29,7 +29,7 @@ export class TaskListComponent implements OnInit {
     if (this.taskGroup === "todo") {
       this.taskBackground = "#0000FF15"
     } else if (this.taskGroup === "doing") {
-      this.taskBackground = "#00FF0015"
+      this.taskBackground = "#3CB37115"
     } else if (this.taskGroup === "done") {
       this.taskBackground = "#FF000015"
     }

@@ -1,1 +1,67 @@
-<p>task-form works!</p>
+<div class="task-manager-wrap">
+    <section class="task-manager-top">
+        <div class="task-manager-top-wrap">
+            <div class="task-manager-heading">
+                <h1 class="">Add Task</h1>
+                <p class="">Add a task that will be managed on the app</p>
+            </div>
+            <!-- <button type="button" (click)="goToAddTask()" class="">
+                <span class="">Add Task</span>
+            </button> -->
+        </div>
+    </section>
+
+    <section class="task-manager-main">
+        <div class="task-manager-main-wrap form">
+            <form [formGroup]="addTaskForm" class="add-task-form" (submit)="addTask()" sui-form novalidate>
+                <div suiFormField>
+                    <label for="title">Title</label>
+                    <div sui-input suiSize="huge">
+                        <input
+                            type="text"
+                            name="title"
+                            formControlName="title"
+                            id="title"
+                            maxlength="15"
+                            required
+                        />
+                    </div>
+                    <div *ngIf="title?.touched && title?.errors" class="error-line">
+                        <span
+                            *ngIf="title && title?.touched && title.errors && title.errors['required']"
+                            class="ui pointing red basic label"
+                        >
+                            A title is required
+                        </span>
+                    </div>
+                </div>
+                <div suiFormField>
+                    <label for="description">Description</label>
+                    <div sui-input suiSize="huge">
+                        <input
+                            type="text"
+                            name="description"
+                            formControlName="description"
+                            id="description"
+                            maxlength="15"
+                            required
+                        />
+                    </div>
+                    <div *ngIf="description?.touched && description?.errors" class="error-line">
+                        <span
+                            *ngIf="description && description?.touched && description.errors && description.errors['required']"
+                            class="ui pointing red basic label"
+                        >
+                            A description is required
+                        </span>
+                    </div>
+                </div>
+                <div class="game-btn-line">
+                    <button type="submit" [disabled]="addTaskForm.invalid" sui-button suiColour="green">
+                        Add Task
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
